@@ -464,6 +464,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Slant;
 				TargetAttributes = {
+					BE559E0C18D7B61C0073089C = {
+						DevelopmentTeam = 75C7KVJZ99;
+					};
 					BE559EBD18D7B61E0073089C = {
 						TestTargetID = BE559E0C18D7B61C0073089C;
 					};
@@ -684,10 +687,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EverythingCollapses/EverythingCollapses-Prefix.pch";
 				INFOPLIST_FILE = "EverythingCollapses/EverythingCollapses-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "98C2053A-6060-42E0-AFDF-F7E86E48191E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -697,10 +704,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EverythingCollapses/EverythingCollapses-Prefix.pch";
 				INFOPLIST_FILE = "EverythingCollapses/EverythingCollapses-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "98C2053A-6060-42E0-AFDF-F7E86E48191E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -764,6 +775,7 @@
 				BE559ED118D7B61E0073089C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE559ED218D7B61E0073089C /* Build configuration list for PBXNativeTarget "EverythingCollapsesTests" */ = {
 			isa = XCConfigurationList;
@@ -772,6 +784,7 @@
 				BE559ED418D7B61E0073089C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
