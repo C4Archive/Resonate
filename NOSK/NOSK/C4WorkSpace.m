@@ -33,6 +33,11 @@
     [self.canvas addObjects:allShapes];
     
     [self listenFor:@"newPoint" andRunMethod:@"goTo:"];
+    
+    for(int i = 0; i < allShapes.count; i++) {
+        NOSKPoint *p = allShapes[i];
+        [p runMethod:@"randomColors" afterDelay:0.02 * i];
+    }
 }
 
 -(void)createConnections {

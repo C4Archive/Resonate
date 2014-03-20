@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NOSK/NOSKPoint.m"
-            timestampString = "416789087.440821"
+            timestampString = "417046630.217514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "-touchesBegan"
             landmarkType = "5">
          </BreakpointContent>

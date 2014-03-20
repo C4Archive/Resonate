@@ -9,4 +9,5 @@
 #import "C4Shape.h"
 
 @interface NOSKPoint : C4Shape
+-(void)randomColors;
 @end

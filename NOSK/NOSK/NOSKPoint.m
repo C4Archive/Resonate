@@ -61,7 +61,6 @@
     for(C4Shape *s in self.subviews) {
         s.userInteractionEnabled = NO;
     }
-    [self randomColors];
     return self;
 }
 

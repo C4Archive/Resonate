@@ -685,6 +685,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NOSK/NOSK-Prefix.pch";
 				INFOPLIST_FILE = "NOSK/NOSK-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -698,6 +699,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NOSK/NOSK-Prefix.pch";
 				INFOPLIST_FILE = "NOSK/NOSK-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -762,6 +764,7 @@
 				BE559DFA18D776BE0073089C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE559DFB18D776BE0073089C /* Build configuration list for PBXNativeTarget "NOSKTests" */ = {
 			isa = XCConfigurationList;
@@ -770,6 +773,7 @@
 				BE559DFD18D776BE0073089C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
