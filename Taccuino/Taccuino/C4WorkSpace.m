@@ -12,44 +12,102 @@
 @property (nonatomic) C4View *treeView;
 @property (nonatomic) C4Slider *slider;
 @property (nonatomic) NSMutableArray *branches, *knots;
-@property (nonatomic) C4Shape *firstKnot;
+@property (nonatomic) C4Shape *firstKnot, *firstBranch;
 @end
 
-@implementation C4WorkSpace
+@implementation C4WorkSpace {
+    NSInteger touchIndex;
+}
 
 -(void)setup {
     //work your magic here
     [self createTree];
     [self createFirstSketch];
     [self.canvas addShape:self.sketch];
-    self.sketch.strokeEnd = 1.0f;
-//    [self runMethod:@"drawOriginalSketch" afterDelay:1.0f];
+    self.sketch.strokeEnd = 0.0f;
     self.slider = [C4Slider slider:CGRectMake(0, 0, 512, 44)];
     self.slider.center = CGPointMake(self.canvas.center.x, self.canvas.height - 66);
     [self.slider runMethod:@"updateSketch" target:self forEvent:VALUECHANGED];
     [self.slider runMethod:@"snap" target:self forEvent:TOUCHUPINSIDE];
     self.slider.value = .0f;
-//    self.slider.alpha = 0.0f;
+
     [self.canvas addUIElement:self.slider];
     self.firstKnot = self.knots[0];
-    
-//    [self addGesture:TAP name:@"tap" action:@"startAnimations"];
-//    [self numberOfTouchesRequired:2 forGesture:@"tap"];
+    self.firstKnot.alpha = 1.0f;
+    self.firstBranch = self.branches[0];
 }
 
--(void)startAnimations {
-    C4Log(@"shouldStart");
+-(void)touchesBegan {
+    if(self.slider.userInteractionEnabled == NO) {
+        if(touchIndex == 0) {
+            [self revealBranch:2 duration:1 delay:0];
+            [self revealBranch:3 duration:1 delay:1];
+            [self revealBranch:4 duration:1 delay:1.5];
+            [self revealBranch:5 duration:1 delay:2.25];
+            [self revealBranch:6 duration:1 delay:1.5];
+            [self revealBranch:7 duration:1 delay:2.25];
+            
+            [self revealBranch:8 duration:1 delay:1.75];
+            [self revealBranch:9 duration:1 delay:2.75];
+            [self revealBranch:10 duration:1 delay:2.5];
+            [self revealBranch:11 duration:1 delay:2.25];
+            
+            [self revealBranch:12 duration:1 delay:.25];
+            [self revealBranch:13 duration:1 delay:1.25];
+            [self revealBranch:14 duration:1 delay:1];
+            [self revealBranch:15 duration:1 delay:.75];
+            
+            [self revealBranch:16 duration:1 delay:1.75];
+            
+            [self revealBranch:17 duration:1 delay:2.];
+            [self revealBranch:18 duration:1 delay:2.75];
+            
+            [self revealBranch:19 duration:1 delay:2.];
+            [self revealBranch:20 duration:1 delay:2.5];
+            [self revealBranch:21 duration:1 delay:3.2];
+            [self revealBranch:22 duration:1 delay:3.75];
+            [self revealBranch:23 duration:1 delay:4.];
+            [self revealBranch:24 duration:1 delay:4.25];
+            [self revealBranch:25 duration:1 delay:4.5];
+            
+            [self revealBranch:26 duration:1 delay:3.25];
+            [self revealBranch:27 duration:1 delay:3.75];
+            touchIndex++;
+        } else if (touchIndex == 1) {
+            for (C4Shape *k in self.knots) {
+                k.animationDuration = 1.0f;
+                k.animationDelay = 0.0f;
+                k.fillColor = C4BLUE;
+                k.strokeColor = C4BLUE;
+            }
+            touchIndex++;
+        }
+    }
 }
 
 -(void)updateSketch {
+    if(self.firstBranch.strokeEnd < 1.0f) {
+        self.firstBranch.animationDuration = 0.0f;
+        self.firstBranch.strokeEnd = self.slider.value;
+    }
+    
     self.sketch.animationDuration = 0.0f;
     self.sketch.strokeEnd = self.slider.value;
-//    self.firstKnot.animationDuration = 0.0f;
-//    self.firstKnot.center = CGPointMake(520.0f * self.slider.value,self.firstKnot.center.y);
+    self.firstKnot.animationDuration = 0.0f;
+    self.firstKnot.center = CGPointMake(520.0f * self.slider.value,self.firstKnot.center.y);
 }
 
 -(void)snap {
-    C4Log(@"snapt");
+    if(self.slider.value < 0.65 && self.slider.value > 0.55) {
+        self.slider.value = 0.5950;
+        self.firstKnot.center = CGPointMake(310, self.slider.center.y);
+        [self updateSketch];
+        self.slider.animationDuration = 0.25f;
+        self.slider.userInteractionEnabled = NO;
+        [self.slider runMethod:@"removeFromSuperview" afterDelay:0.5f];
+        [self switchToSecondSketch];
+        [self revealBranch:1 duration:5 delay:.25];
+    }
 }
 
 -(void)createTree {
@@ -62,12 +120,12 @@
     
     CGRect branchFrames[28] = {
         CGRectMake(0, 0, 520, 0),
+        CGRectMake(310, 0, 140, -120),
         CGRectMake(430,0,210,-40),
         CGRectMake(480,-40,70,20),//3
         CGRectMake(370, 0, 140, -60),
         CGRectMake(420, -60, 70, -20),
         CGRectMake(340, 0, 360, -100),
-        CGRectMake(320, 0, 140, -120),
         CGRectMake(360, -120, 70, -20),
         CGRectMake(80, 0, 150, -20),
         CGRectMake(190, -20, 70, -20),
@@ -101,43 +159,6 @@
     [self.treeView addObjects:self.knots];
     
     [self.canvas addSubview:self.treeView];
-    
-//    [self revealBranch:0 duration:5 delay:1];
-//    [self runMethod:@"startFirstKnot" afterDelay:0.25f];
-//    [self revealBranch:1 duration:4 delay:10.75];
-
-//    [self revealBranch:2 duration:1 delay:16];
-//    [self revealBranch:3 duration:1 delay:17];
-//    [self revealBranch:4 duration:1 delay:17.75];
-//    [self revealBranch:5 duration:1 delay:17.25];
-//    [self revealBranch:6 duration:1 delay:17.5];
-//    [self revealBranch:7 duration:1 delay:18.25];
-//    
-//    [self revealBranch:8 duration:1 delay:17.75];
-//    [self revealBranch:9 duration:1 delay:18.75];
-//    [self revealBranch:10 duration:1 delay:18.5];
-//    [self revealBranch:11 duration:1 delay:18.25];
-//    
-//    [self revealBranch:12 duration:1 delay:16.25];
-//    [self revealBranch:13 duration:1 delay:17.25];
-//    [self revealBranch:14 duration:1 delay:17];
-//    [self revealBranch:15 duration:1 delay:16.75];
-//    
-//    [self revealBranch:16 duration:1 delay:17.75];
-//
-//    [self revealBranch:17 duration:1 delay:18.];
-//    [self revealBranch:18 duration:1 delay:18.75];
-//    
-//    [self revealBranch:19 duration:1 delay:18.25];
-//    [self revealBranch:20 duration:1 delay:18.75];
-//    [self revealBranch:21 duration:1 delay:19.];
-//    [self revealBranch:22 duration:1 delay:19.25];
-//    [self revealBranch:23 duration:1 delay:19.25];
-//    [self revealBranch:24 duration:1 delay:19.25];
-//    [self revealBranch:25 duration:1 delay:19.25];
-//
-//    [self revealBranch:26 duration:1 delay:19.];
-//    [self revealBranch:27 duration:1 delay:19.5];
 }
 
 -(void)startFirstKnot {
@@ -194,12 +215,6 @@
     [self.knots addObject:knot];
 }
 
--(void)drawOriginalSketch {
-    self.sketch.animationDuration = 5.0f;
-    self.sketch.animationOptions = LINEAR;
-    self.sketch.strokeEnd = 1.0f;
-}
-
 -(void)animateToMidPointAndStop {
     self.sketch.animationDuration = 2.0f;
     self.sketch.strokeEnd = 0.5950;
@@ -220,7 +235,7 @@
 -(void)setSecondSketch {
     self.sketch.animationDuration = 0.001f;
     self.sketch.strokeEnd = 0.4250;
-    [self runMethod:@"drawSecondSketch" afterDelay:2.0f];
+    [self runMethod:@"drawSecondSketch" afterDelay:1.0f];
 }
 
 -(void)drawSecondSketch {

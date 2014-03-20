@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>509DCA5C-4D7D-44F7-8745-AECC30BF4335</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Taccuino</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DA89830E-1B46-4B50-A65C-1D39C20D1783</key>
+		<string>https://github.com/C4Framework/Resonate.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Taccuino/Taccuino.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DA89830E-1B46-4B50-A65C-1D39C20D1783</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/C4Framework/Resonate.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DA89830E-1B46-4B50-A65C-1D39C20D1783</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DA89830E-1B46-4B50-A65C-1D39C20D1783</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Resonate</string>
+		</dict>
+	</array>
+</dict>
+</plist>
