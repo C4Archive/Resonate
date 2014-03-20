@@ -3008,7 +3008,7 @@ void MyCGPathApplierFunc (void *info, const CGPathElement *element) {
     CGPathAddLineToPoint(path,nil,613.00,582.50);
     CGPathAddLineToPoint(path,nil,618.00,585.00);
     CGPathCloseSubpath(path);
-    
+
     const CGAffineTransform t = CGAffineTransformMakeScale(0.5, 0.5);
     CGPathRef transformed = CGPathCreateCopyByTransformingPath(path, &t);
     shape.path = transformed;
