@@ -71,16 +71,56 @@
             [self revealBranch:25 duration:1 delay:4.5];
             
             [self revealBranch:26 duration:1 delay:3.25];
-            [self revealBranch:27 duration:1 delay:3.75];
+            [self revealBranch:27 duration:1 delay:4.0];
             touchIndex++;
         } else if (touchIndex == 1) {
             for (C4Shape *k in self.knots) {
                 k.animationDuration = 1.0f;
                 k.animationDelay = 0.0f;
-                k.fillColor = C4BLUE;
-                k.strokeColor = C4BLUE;
+                k.fillColor = [UIColor whiteColor];
+                k.strokeColor = [UIColor lightGrayColor];
+            }
+            
+            for(int i = 0; i < self.branches.count; i++) {
+                C4Shape *branch = self.branches[i];
+                branch.animationDuration = 1.0f;
+                branch.animationDelay = 0.0f;
+                if(i < 19)
+                    branch.strokeColor = [UIColor lightGrayColor];
+                else {
+                    branch.strokeColor = [UIColor redColor];
+                    branch.lineWidth = 4;
+                }
             }
             touchIndex++;
+        } else if (touchIndex == 2) {
+            for(int i = 0; i < self.branches.count; i++) {
+                C4Shape *branch = self.branches[i];
+                branch.animationDuration = 1.0f;
+                branch.animationDelay = 0.0f;
+                if(i == 6) {
+                    branch.strokeColor = [UIColor redColor];
+                    branch.lineWidth = 4;
+                }
+                else {
+                    branch.strokeColor = [UIColor lightGrayColor];
+                    branch.lineWidth = 2;
+                }
+            }
+            touchIndex++;
+        } else if (touchIndex == 3) {
+            for (C4Shape *k in self.knots) {
+                k.animationDuration = 1.0f;
+                k.animationDelay = 0.0f;
+                k.lineWidth = 3;
+                k.fillColor = C4RED;
+                k.strokeColor = C4RED;
+            }
+            C4Shape *branch = self.branches[6];
+            branch.animationDuration = 1.0f;
+            branch.animationDelay = 0.0f;
+            branch.lineWidth = 2.0f;
+            branch.strokeColor = [UIColor lightGrayColor];
         }
     }
 }
