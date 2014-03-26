@@ -14,6 +14,10 @@
 }
 
 -(void)setup {
+    [self setupEmitters];
+}
+
+-(void)setupGradients {
     for(int i = 0; i < 31; i++) {
         CAGradientLayer *gradientLayer = [CAGradientLayer layer];
         gradientLayer.frame = CGRectMake(-32, i * 32 + 32, self.canvas.width+32, 0.5);

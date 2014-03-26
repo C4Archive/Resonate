@@ -19,7 +19,7 @@
     [C4Shape defaultStyle].lineWidth = 0.0f;
     
     nameIndex = 0;
-    names = @[@"buza",
+    names = @[@"@buza",
               @"@gregtemp",
               @"@adamtindale",
               @"@kulturlab",
@@ -34,6 +34,7 @@
               @"@tangibleint",
               @"@nickpagee",
               @"a-coding.com",
+              @"@hoho"
               ];
     
     [self runMethod:@"showNextName" afterDelay:1.0f];

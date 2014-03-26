@@ -756,6 +756,7 @@
 				C42C287018E14B9F008C0CB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C42C287118E14B9F008C0CB2 /* Build configuration list for PBXNativeTarget "EmitterTestTests" */ = {
 			isa = XCConfigurationList;
@@ -764,6 +765,7 @@
 				C42C287318E14B9F008C0CB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
