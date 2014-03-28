@@ -27,19 +27,19 @@
 }
 
 -(void)setup {
-    textLandscape = [C4Movie movieNamed:@"textLandscapeiPadShort.mov"];
-    textLandscape.width = self.canvas.width;
-    textLandscape.center = self.canvas.center;
-    textLandscape.shouldAutoplay = YES;
-    [self.canvas addMovie:textLandscape];
+//    textLandscape = [C4Movie movieNamed:@"textLandscapeiPadShort.mov"];
+//    textLandscape.width = self.canvas.width;
+//    textLandscape.center = self.canvas.center;
+//    textLandscape.shouldAutoplay = YES;
+//    [self.canvas addMovie:textLandscape];
+//    
+//    [self createSlides];
+//    [self listenFor:@"reachedEnd" andRunMethod:@"initiateSlideShow"];
     
-    [self createSlides];
-    [self listenFor:@"reachedEnd" andRunMethod:@"initiateSlideShow"];
-    
-//    [self createStraightLetters];
-//    [self runMethod:@"createStraightBaseline" afterDelay:0.1];
-//    [self runMethod:@"createDrawnBaseline" afterDelay:.15];
-//    [self runMethod:@"createDrawnLetters" afterDelay:0.2];
+    [self createStraightLetters];
+    [self runMethod:@"createStraightBaseline" afterDelay:0.1];
+    [self runMethod:@"createDrawnBaseline" afterDelay:.15];
+    [self runMethod:@"createDrawnLetters" afterDelay:0.2];
 }
 
 -(void)createSlides {
