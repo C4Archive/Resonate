@@ -680,6 +680,7 @@
 				GCC_PREFIX_HEADER = "Idea/Idea-Prefix.pch";
 				INFOPLIST_FILE = "Idea/Idea-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D478FAA9-DFC8-434F-824F-1E7CE9FAEAC8";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -693,6 +694,7 @@
 				GCC_PREFIX_HEADER = "Idea/Idea-Prefix.pch";
 				INFOPLIST_FILE = "Idea/Idea-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D478FAA9-DFC8-434F-824F-1E7CE9FAEAC8";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -756,6 +758,7 @@
 				C42C279F18E142D8008C0CB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C42C27A018E142D8008C0CB2 /* Build configuration list for PBXNativeTarget "IdeaTests" */ = {
 			isa = XCConfigurationList;
@@ -764,6 +767,7 @@
 				C42C27A218E142D8008C0CB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

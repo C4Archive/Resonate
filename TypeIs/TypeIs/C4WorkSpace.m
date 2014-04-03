@@ -20,14 +20,75 @@
     C4Shape *straightBaselinePoint;
     
     NSMutableArray *points;
+
+    C4Movie *textLandscape;
+    NSMutableArray *slides;
+    C4Image *currentSlide;
 }
 
 -(void)setup {
+//    textLandscape = [C4Movie movieNamed:@"textLandscapeiPadShort.mov"];
+//    textLandscape.width = self.canvas.width;
+//    textLandscape.center = self.canvas.center;
+//    textLandscape.shouldAutoplay = YES;
+//    [self.canvas addMovie:textLandscape];
+//    
+//    [self createSlides];
+//    [self listenFor:@"reachedEnd" andRunMethod:@"initiateSlideShow"];
+    
     [self createStraightLetters];
     [self runMethod:@"createStraightBaseline" afterDelay:0.1];
     [self runMethod:@"createDrawnBaseline" afterDelay:.15];
     [self runMethod:@"createDrawnLetters" afterDelay:0.2];
 }
+
+-(void)createSlides {
+    slides = [@[] mutableCopy];
+    for (int i = 0; i < 12; i++) {
+        NSString *name = [NSString stringWithFormat:@"typeis%02d",i];
+        C4Image *img = [C4Image imageNamed:name];
+        
+        img.width = self.canvas.width;
+        img.center = self.canvas.center;
+        img.alpha = 0.0f;
+        [slides addObject:img];
+    }
+}
+
+-(void)initiateSlideShow {
+    [self.canvas addObjects:slides];
+    [self revealSlide:slides[0]];
+}
+
+-(void)revealSlide:(C4Image *)slide {
+    slide.animationDuration = 0.5f;
+    slide.alpha = 1.0f;
+    
+    
+    if(currentSlide == nil) {
+        [textLandscape runMethod:@"removeFromSuperview" afterDelay:0.6f];
+    } else {
+        [currentSlide runMethod:@"removeFromSuperview" afterDelay:0.6f];
+    }
+
+    NSInteger indexForNextSlide = [slides indexOfObject:slide] + 1;
+    currentSlide = slide;
+    
+    C4Image *nextSlide;
+    if(indexForNextSlide < slides.count) {
+        nextSlide = slides[indexForNextSlide];
+        [self runMethod:@"revealSlide:" withObject:nextSlide afterDelay:3.0f];
+    } else {
+        [self runMethod:@"fadeSlide:" withObject:currentSlide afterDelay:3.0f];
+    }
+}
+
+-(void)fadeSlide:(C4Image *)slide {
+    slide.animationDuration = 0.5f;
+    slide.alpha = 0.0f;
+    [slide runMethod:@"removeFromSuperview" afterDelay:0.6f];
+}
+
 
 -(void)createStraightLetters {
     C4Font *f = [C4Font fontWithName:@"Menlo-Regular" size:48];

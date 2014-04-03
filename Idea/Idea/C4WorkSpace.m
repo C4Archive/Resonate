@@ -8,8 +8,8 @@
 #import "C4Workspace.h"
 
 @implementation C4WorkSpace {
-    C4Shape *idea, *arrow;
-    CGPoint holePosition;
+    C4Shape *idea, *arrow, *pulse;
+    CGPoint holePosition, holePositionInCanvas;
 }
 
 -(void)setup {
@@ -28,6 +28,7 @@
     idea.center = self.canvas.center;
     idea.lineWidth = 0.0f;
     idea.fillRule = FILLEVENODD;
+    idea.clipsToBounds = YES;
     [self.canvas addShape:idea];
     
     [self runMethod:@"animateHole" afterDelay:1.0f];
@@ -40,11 +41,13 @@
     
     CGFloat randomAngle = DegreesToRadians(45 - [C4Math randomInt:90]) ;
     
-    holePosition = CGPointMake(r * cos(randomAngle) + idea.width / 2,
-                               r * sin(randomAngle) + idea.height / 2);
+    holePosition = CGPointMake(r * cos(randomAngle),
+                               r * sin(randomAngle));
+    holePositionInCanvas.x = holePosition.x + idea.width / 2;
+    holePositionInCanvas.y = holePosition.y + idea.height / 2;
     [self createArrow];
     [self addShape:arrow];
-    CGAffineTransform t = CGAffineTransformMakeTranslation(holePosition.x,holePosition.y);
+    CGAffineTransform t = CGAffineTransformMakeTranslation(holePositionInCanvas.x,holePositionInCanvas.y);
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathAddPath(path, nil, idea.path);
     CGPathAddPath(path, &t, hole.path);
@@ -52,7 +55,26 @@
     idea.animationDuration = 0.50f;
     idea.path = path;
     
-    [self runMethod:@"revealArrow:" withObject:arrow afterDelay:2.0f];
+    [self runMethod:@"createPulse" afterDelay:1.0f];
+}
+
+-(void)createPulse {
+    pulse = [C4Shape ellipse:CGRectMake(holePositionInCanvas.x, holePositionInCanvas.y, 4, 4)];
+    pulse.fillColor = [UIColor clearColor];
+    pulse.lineWidth = 5.0f;
+    pulse.strokeColor = [UIColor whiteColor];
+    pulse.alpha = 0.0f;
+    [idea addShape:pulse];
+    [self runMethod:@"animatePulse" afterDelay:1.0f];
+}
+
+-(void)animatePulse {
+    pulse.animationDuration = 2.0f;
+    pulse.animationOptions = EASEIN | REPEAT;
+    [pulse ellipse:CGRectMake(0, 0, 640, 640)];
+    pulse.center = holePositionInCanvas;
+    pulse.lineWidth = 0.0f;
+    pulse.alpha = 1.0f;
 }
 
 -(void)createArrow {
