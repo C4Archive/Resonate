@@ -80,7 +80,7 @@
 	</dict>
 	<dict>
 		<key>type</key>
-		<string>image</string>
+		<string>borderless</string>
 		<key>string</key>
 		<string>cc0</string>
 	</dict>
@@ -104,24 +104,24 @@ projects (P/OF)?</string>
 		<string>text</string>
 		<key>string</key>
 		<string>what were the
-constraints
-i was encountering?</string>
+constraints i
+was encountering?</string>
 	</dict>
 	<dict>
 		<key>type</key>
-		<string>image</string>
+		<string>borderless</string>
 		<key>string</key>
 		<string>cc0</string>
 	</dict>
 	<dict>
 		<key>type</key>
-		<string>image</string>
+		<string>borderless</string>
 		<key>string</key>
 		<string>cc1</string>
 	</dict>
 	<dict>
 		<key>type</key>
-		<string>image</string>
+		<string>borderless</string>
 		<key>string</key>
 		<string>cc2</string>
 	</dict>
@@ -169,6 +169,30 @@ to drawing?</string>
 		<string>text</string>
 		<key>string</key>
 		<string>[C4Shape ellipse:{x,y,w,h}];</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>ellipse(x,y,w,h);
+
+draws.</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>[C4Shape ellipse:{x,y,w,h}];
+
+puts.</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>ellipse(x,y,w,h);
+
+[C4Shape ellipse:{x,y,w,h}];</string>
 	</dict>
 </array>
 </plist>

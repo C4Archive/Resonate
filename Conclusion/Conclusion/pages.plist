@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>layers + views</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>media : objects</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>(hardware + software)</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>media:objects</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>making future magic</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>tablet = paintbrush</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>app : device</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>C4</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>ellipse(x,y,w,h);</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>[C4Shape ellipse:{x,y,w,h}];</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>borderless</string>
+		<key>string</key>
+		<string>cc2</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>c4ios.com
+@cocoafor</string>
+	</dict>
+</array>
+</plist>

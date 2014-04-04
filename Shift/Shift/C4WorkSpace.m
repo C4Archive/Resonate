@@ -167,7 +167,6 @@
         };
         
         [self.canvas addShape:s];
-        
         [self runMethod:@"animateCircleIn:" withObject:s afterDelay:i * .05];
     }
 }
