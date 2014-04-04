@@ -69,6 +69,7 @@
 		BE559DF318D776BE0073089C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE559DF118D776BE0073089C /* InfoPlist.strings */; };
 		BE559DF518D776BE0073089C /* NOSKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE559DF418D776BE0073089C /* NOSKTests.m */; };
 		BE559E0318D79A720073089C /* NOSKPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = BE559E0218D79A720073089C /* NOSKPoint.m */; };
+		C49B892D18EDBB7200118DF5 /* C4Logo.m in Sources */ = {isa = PBXBuildFile; fileRef = C49B892C18EDBB7200118DF5 /* C4Logo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +194,8 @@
 		BE559DF418D776BE0073089C /* NOSKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NOSKTests.m; sourceTree = "<group>"; };
 		BE559E0118D79A720073089C /* NOSKPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOSKPoint.h; sourceTree = "<group>"; };
 		BE559E0218D79A720073089C /* NOSKPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOSKPoint.m; sourceTree = "<group>"; };
+		C49B892B18EDBB7200118DF5 /* C4Logo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4Logo.h; sourceTree = "<group>"; };
+		C49B892C18EDBB7200118DF5 /* C4Logo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C4Logo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +275,8 @@
 				BE559DE118D776BE0073089C /* C4WorkSpace.m */,
 				BE559E0118D79A720073089C /* NOSKPoint.h */,
 				BE559E0218D79A720073089C /* NOSKPoint.m */,
+				C49B892B18EDBB7200118DF5 /* C4Logo.h */,
+				C49B892C18EDBB7200118DF5 /* C4Logo.m */,
 				BE559D5818D776BC0073089C /* Media */,
 				BE559D5D18D776BC0073089C /* Framework */,
 				BE559DDC18D776BE0073089C /* Storyboards */,
@@ -536,6 +541,7 @@
 				BE559DB718D776BE0073089C /* C4Layer.m in Sources */,
 				BE559DB318D776BD0073089C /* C4ImageView.m in Sources */,
 				BE559DD918D776BE0073089C /* C4Window.m in Sources */,
+				C49B892D18EDBB7200118DF5 /* C4Logo.m in Sources */,
 				BE559D9718D776BC0073089C /* C4Camera.m in Sources */,
 				BE559DBF18D776BE0073089C /* C4Object.m in Sources */,
 				BE559DAF18D776BD0073089C /* C4GL1Renderer.m in Sources */,

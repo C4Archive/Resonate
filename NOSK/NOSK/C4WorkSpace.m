@@ -7,6 +7,7 @@
 
 #import "C4Workspace.h"
 #import "NOSKPoint.h"
+#import "C4Logo.h"
 
 @implementation C4WorkSpace {
     CGPoint innerTargets[36];
@@ -14,12 +15,22 @@
     NSMutableArray *allShapes;
     NSMutableArray *remainingInnerLocations, *remainingOuterLocations;
     NSMutableArray *connections;
+    NSMutableArray *gradientLayers;
+    C4Logo *logo;
 }
 
 -(void)setup {
     allShapes = [@[] mutableCopy];
-    
+    [self setupRandomLines];
     [self createConnections];
+    
+    C4Shape *s = [C4Shape ellipse:CGRectMake(0, 0, 480, 480)];
+    s.fillColor = [UIColor whiteColor];
+    s.strokeColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5f];
+    s.lineWidth = 0.0f;
+    s.alpha = 0.5f;
+    s.center = self.canvas.center;
+    [self.canvas addShape:s];
     
     [self createTargetPoints];
     [C4Shape defaultStyle].lineWidth = 0;
@@ -38,6 +49,51 @@
         NOSKPoint *p = allShapes[i];
         [p runMethod:@"randomColors" afterDelay:0.02 * i];
     }
+    
+    [self createLogo];
+    
+    [self addGesture:LONGPRESS name:@"long" action:@"revealWords"];
+}
+
+-(void)revealWords {
+    C4Font *font = [C4Font fontWithName:@"Menlo-Bold" size:48];
+    C4Label *rep = [C4Label labelWithText:@"REPRESENTATION\nOF KNOWLEDGE" font:font];
+    rep.numberOfLines = 2;
+    rep.alpha = 0;
+    [rep sizeToFit];
+    rep.center = self.canvas.center;
+    rep.textAlignment = ALIGNTEXTCENTER;
+    
+    C4Label *stat = [C4Label labelWithText:@"FROM STATIC\nTO DYNAMIC" font:font];
+    stat.numberOfLines = 2;
+    stat.alpha = 0;
+    [stat sizeToFit];
+    stat.center = self.canvas.center;
+    stat.textAlignment = ALIGNTEXTCENTER;
+    
+    [self runMethod:@"revealLabel:" withObject:rep afterDelay:0.25f];
+    [self runMethod:@"hideLabel:" withObject:rep afterDelay:5.25f];
+    [self runMethod:@"revealLabel:" withObject:stat afterDelay:6.5f];
+    [self runMethod:@"hideLabel:" withObject:stat afterDelay:11.5f];
+}
+
+-(void)revealLabel:(C4Label *)label {
+    [self.canvas addLabel:label];
+    label.animationDuration = 1.0f;
+    label.alpha = 1.0f;
+}
+
+-(void)hideLabel:(C4Label *)label {
+    label.animationDuration = 1.0f;
+    label.alpha = 0.0f;
+    [label runMethod:@"removeFromSuperview" afterDelay:1.1f];
+}
+
+-(void)createLogo {
+    logo = [[C4Logo alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
+    logo.origin = CGPointMake(10, self.canvas.height-logo.height-10);
+    [logo setup];
+    [self.canvas addSubview:logo];
 }
 
 -(void)createConnections {
@@ -102,7 +158,7 @@
         NSInteger targetIndex = [C4Math randomInt:remainingInnerLocations.count];
         NSNumber *targetIndexValue = remainingInnerLocations[targetIndex];
         CGPoint target = innerTargets[[targetIndexValue integerValue]];
-        innerPoint.animationDuration = 2.0f + [C4Math randomInt:30]/100.0f;
+        innerPoint.animationDuration = 1.0f + [C4Math randomInt:30]/100.0f;
         innerPoint.animationDelay = [C4Math randomInt:30]/100.0f;
         innerPoint.alpha = 1.0f;
         innerPoint.center = target;
@@ -123,7 +179,7 @@
             NSInteger targetIndex = [C4Math randomInt:remainingOuterLocations.count];
             NSNumber *targetIndexValue = remainingOuterLocations[targetIndex];
             CGPoint target = outerTargets[[targetIndexValue integerValue]];
-            outerPoint.animationDuration = 2.0f + [C4Math randomInt:30]/100.0f;
+            outerPoint.animationDuration = 1.0f + [C4Math randomInt:30]/100.0f;
             outerPoint.animationDelay = [C4Math randomInt:30]/100.0f;
             outerPoint.alpha = 1.0f;
             outerPoint.center = target;
@@ -197,6 +253,57 @@
     for(int i = 0; i < 72; i++) {
         remainingOuterLocations[i] = @(i);
     }
+}
+
+-(void)setupRandomLines {
+    for(int i = 0; i < 50; i++) {
+        [self addRandomLine];
+    }
+}
+
+-(void)addLine:(CGPoint)origin {
+    C4Shape *aLine;
+    CGPoint pts[2] = {origin, CGPointMake(origin.x + self.canvas.height, origin.y + self.canvas.height)};
+    aLine = [C4Shape line:pts];
+    aLine.lineWidth = 0.0;
+    switch ([C4Math randomInt:3]) {
+        case 0:
+            aLine.strokeColor = C4GREY;
+            break;
+        case 1:
+            aLine.strokeColor = C4RED;
+            break;
+        case 2:
+            aLine.strokeColor = C4BLUE;
+            break;
+    };
+    aLine.strokeEnd = 0.0f;
+    [self.canvas addShape:aLine];
+    [self animateIn:aLine];
+}
+
+-(void)animateIn:(C4Shape *)line {
+    line.animationDuration = [C4Math randomInt:5] + 5;
+    line.animationOptions = EASEOUT;
+    line.strokeEnd = 1.0f;
+    line.lineWidth = ([C4Math randomInt:20] + 5.0f) / 100.0f;
+    [self runMethod:@"animateOut:" withObject:line afterDelay:1.0];
+}
+
+-(void)animateOut:(C4Shape *)line {
+    line.animationOptions = EASEIN;
+    line.strokeStart = 1.0f;
+    [line runMethod:@"removeFromSuperview" afterDelay:line.animationDuration + 1];
+    [self runMethod:@"addRandomLine" afterDelay:line.animationDuration];
+}
+
+-(void)addRandomLine {
+    CGFloat random = [C4Math randomInt:self.canvas.width + self.canvas.height] - self.canvas.height;
+    [self addLine:CGPointMake(random, 0)];
+}
+
+-(BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 @end

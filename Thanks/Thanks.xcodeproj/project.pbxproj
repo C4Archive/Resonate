@@ -68,6 +68,8 @@
 		C42C26BF18E13AF9008C0CB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C42C262118E13AF7008C0CB2 /* UIKit.framework */; };
 		C42C26C718E13AF9008C0CB2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C42C26C518E13AF9008C0CB2 /* InfoPlist.strings */; };
 		C42C26C918E13AF9008C0CB2 /* ThanksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C42C26C818E13AF9008C0CB2 /* ThanksTests.m */; };
+		C49B892A18EDB6D700118DF5 /* C4Logo.m in Sources */ = {isa = PBXBuildFile; fileRef = C49B892918EDB6D700118DF5 /* C4Logo.m */; };
+		C49B893018EDC51000118DF5 /* HoloLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = C49B892F18EDC51000118DF5 /* HoloLogo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +192,10 @@
 		C42C26C418E13AF9008C0CB2 /* ThanksTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThanksTests-Info.plist"; sourceTree = "<group>"; };
 		C42C26C618E13AF9008C0CB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C42C26C818E13AF9008C0CB2 /* ThanksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThanksTests.m; sourceTree = "<group>"; };
+		C49B892818EDB6D700118DF5 /* C4Logo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4Logo.h; sourceTree = "<group>"; };
+		C49B892918EDB6D700118DF5 /* C4Logo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C4Logo.m; sourceTree = "<group>"; };
+		C49B892E18EDC51000118DF5 /* HoloLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoloLogo.h; sourceTree = "<group>"; };
+		C49B892F18EDC51000118DF5 /* HoloLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoloLogo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +273,10 @@
 			children = (
 				C42C26B418E13AF9008C0CB2 /* C4WorkSpace.h */,
 				C42C26B518E13AF9008C0CB2 /* C4WorkSpace.m */,
+				C49B892818EDB6D700118DF5 /* C4Logo.h */,
+				C49B892918EDB6D700118DF5 /* C4Logo.m */,
+				C49B892E18EDC51000118DF5 /* HoloLogo.h */,
+				C49B892F18EDC51000118DF5 /* HoloLogo.m */,
 				C42C262C18E13AF7008C0CB2 /* Media */,
 				C42C263118E13AF8008C0CB2 /* Framework */,
 				C42C26B018E13AF9008C0CB2 /* Storyboards */,
@@ -512,6 +522,7 @@
 				C42C26A118E13AF9008C0CB2 /* C4Switch.m in Sources */,
 				C42C269F18E13AF9008C0CB2 /* C4Stepper.m in Sources */,
 				C42C269B18E13AF9008C0CB2 /* C4ShapeLayer.m in Sources */,
+				C49B892A18EDB6D700118DF5 /* C4Logo.m in Sources */,
 				C42C267918E13AF9008C0CB2 /* C4EAGLESRenderer.m in Sources */,
 				C42C266D18E13AF9008C0CB2 /* C4CameraController.m in Sources */,
 				C42C268D18E13AF9008C0CB2 /* C4Math.m in Sources */,
@@ -540,6 +551,7 @@
 				C42C269518E13AF9008C0CB2 /* C4Sample.m in Sources */,
 				C42C26B618E13AF9008C0CB2 /* C4WorkSpace.m in Sources */,
 				C42C26A318E13AF9008C0CB2 /* C4Timer.m in Sources */,
+				C49B893018EDC51000118DF5 /* HoloLogo.m in Sources */,
 				C42C269118E13AF9008C0CB2 /* C4MovieLayer.m in Sources */,
 				C42C268518E13AF9008C0CB2 /* C4Image.m in Sources */,
 				C42C267518E13AF9008C0CB2 /* C4Defines.m in Sources */,
@@ -756,6 +768,7 @@
 				C42C26CE18E13AF9008C0CB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C42C26CF18E13AF9008C0CB2 /* Build configuration list for PBXNativeTarget "ThanksTests" */ = {
 			isa = XCConfigurationList;
@@ -764,6 +777,7 @@
 				C42C26D118E13AF9008C0CB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

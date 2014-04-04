@@ -68,6 +68,7 @@
 		BEF3C9E818DA2ABF00DABC56 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF3C94A18DA2ABE00DABC56 /* UIKit.framework */; };
 		BEF3C9F018DA2ABF00DABC56 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEF3C9EE18DA2ABF00DABC56 /* InfoPlist.strings */; };
 		BEF3C9F218DA2ABF00DABC56 /* TaccuinoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF3C9F118DA2ABF00DABC56 /* TaccuinoTests.m */; };
+		C4C885F518EE1C0900AFEBFA /* C4Logo.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C885F418EE1C0900AFEBFA /* C4Logo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +191,8 @@
 		BEF3C9ED18DA2ABF00DABC56 /* TaccuinoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TaccuinoTests-Info.plist"; sourceTree = "<group>"; };
 		BEF3C9EF18DA2ABF00DABC56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BEF3C9F118DA2ABF00DABC56 /* TaccuinoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaccuinoTests.m; sourceTree = "<group>"; };
+		C4C885F318EE1C0900AFEBFA /* C4Logo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4Logo.h; sourceTree = "<group>"; };
+		C4C885F418EE1C0900AFEBFA /* C4Logo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C4Logo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +270,8 @@
 			children = (
 				BEF3C9DD18DA2ABF00DABC56 /* C4WorkSpace.h */,
 				BEF3C9DE18DA2ABF00DABC56 /* C4WorkSpace.m */,
+				C4C885F318EE1C0900AFEBFA /* C4Logo.h */,
+				C4C885F418EE1C0900AFEBFA /* C4Logo.m */,
 				BEF3C95518DA2ABE00DABC56 /* Media */,
 				BEF3C95A18DA2ABE00DABC56 /* Framework */,
 				BEF3C9D918DA2ABF00DABC56 /* Storyboards */,
@@ -512,6 +517,7 @@
 				BEF3C9CA18DA2ABF00DABC56 /* C4Switch.m in Sources */,
 				BEF3C9C818DA2ABF00DABC56 /* C4Stepper.m in Sources */,
 				BEF3C9C418DA2ABF00DABC56 /* C4ShapeLayer.m in Sources */,
+				C4C885F518EE1C0900AFEBFA /* C4Logo.m in Sources */,
 				BEF3C9A218DA2ABF00DABC56 /* C4EAGLESRenderer.m in Sources */,
 				BEF3C99618DA2ABF00DABC56 /* C4CameraController.m in Sources */,
 				BEF3C9B618DA2ABF00DABC56 /* C4Math.m in Sources */,
@@ -681,7 +687,7 @@
 				INFOPLIST_FILE = "Taccuino/Taccuino-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2CABC830-71D9-4C73-9250-BE6D0CE68004";
+				PROVISIONING_PROFILE = "B1A7E322-38AD-46B3-A17D-11D144C7CB60";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -696,7 +702,7 @@
 				INFOPLIST_FILE = "Taccuino/Taccuino-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2CABC830-71D9-4C73-9250-BE6D0CE68004";
+				PROVISIONING_PROFILE = "B1A7E322-38AD-46B3-A17D-11D144C7CB60";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

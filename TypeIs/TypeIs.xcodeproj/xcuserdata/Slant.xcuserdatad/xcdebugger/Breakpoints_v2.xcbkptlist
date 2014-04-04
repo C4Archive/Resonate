@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TypeIs/C4WorkSpace.m"
-            timestampString = "417551451.431314"
+            timestampString = "418264993.198353"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "408"
-            endingLineNumber = "408"
-            landmarkName = "-touchesEnded"
+            startingLineNumber = "516"
+            endingLineNumber = "516"
+            landmarkName = "-createDrawnLetters"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -145,7 +145,6 @@
     emitterLayer.position = CGPointMake(self.canvas.width - self.canvas.height, self.canvas.height);
     [self.canvas.layer addSublayer:emitterLayer];
     
-    
     NSMutableArray *emitters = [@[] mutableCopy];
     UIColor *c;
     NSString *s;

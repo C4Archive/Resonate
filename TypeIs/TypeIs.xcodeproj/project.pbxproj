@@ -69,6 +69,7 @@
 		BE24FA7E18E251BB0080300B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE24FA7C18E251BB0080300B /* InfoPlist.strings */; };
 		BE24FA8018E251BB0080300B /* TypeIsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE24FA7F18E251BB0080300B /* TypeIsTests.m */; };
 		BE575D9F18E39EBC000CFD08 /* textLandscapeiPadShort.mov in Resources */ = {isa = PBXBuildFile; fileRef = BE575D9E18E39EBC000CFD08 /* textLandscapeiPadShort.mov */; };
+		C4AAA25C18EE2BB200E255F3 /* C4Logo.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AAA25B18EE2BB200E255F3 /* C4Logo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +193,8 @@
 		BE24FA7D18E251BB0080300B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BE24FA7F18E251BB0080300B /* TypeIsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypeIsTests.m; sourceTree = "<group>"; };
 		BE575D9E18E39EBC000CFD08 /* textLandscapeiPadShort.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = textLandscapeiPadShort.mov; sourceTree = "<group>"; };
+		C4AAA25A18EE2BB200E255F3 /* C4Logo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4Logo.h; sourceTree = "<group>"; };
+		C4AAA25B18EE2BB200E255F3 /* C4Logo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C4Logo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +272,8 @@
 			children = (
 				BE24FA6B18E251BB0080300B /* C4WorkSpace.h */,
 				BE24FA6C18E251BB0080300B /* C4WorkSpace.m */,
+				C4AAA25A18EE2BB200E255F3 /* C4Logo.h */,
+				C4AAA25B18EE2BB200E255F3 /* C4Logo.m */,
 				BE24F9E318E251BA0080300B /* Media */,
 				BE24F9E818E251BA0080300B /* Framework */,
 				BE24FA6718E251BB0080300B /* Storyboards */,
@@ -516,6 +521,7 @@
 				BE24FA5818E251BB0080300B /* C4Switch.m in Sources */,
 				BE24FA5618E251BB0080300B /* C4Stepper.m in Sources */,
 				BE24FA5218E251BB0080300B /* C4ShapeLayer.m in Sources */,
+				C4AAA25C18EE2BB200E255F3 /* C4Logo.m in Sources */,
 				BE24FA3018E251BB0080300B /* C4EAGLESRenderer.m in Sources */,
 				BE24FA2418E251BB0080300B /* C4CameraController.m in Sources */,
 				BE24FA4418E251BB0080300B /* C4Math.m in Sources */,

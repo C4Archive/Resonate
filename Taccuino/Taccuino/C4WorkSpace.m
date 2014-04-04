@@ -6,6 +6,7 @@
 //
 
 #import "C4Workspace.h"
+#import "C4Logo.h"
 
 @interface C4WorkSpace ()
 @property (nonatomic) C4Shape *sketch;
@@ -17,9 +18,12 @@
 
 @implementation C4WorkSpace {
     NSInteger touchIndex;
+    C4Logo *logo;
 }
 
 -(void)setup {
+    [self setupRandomLines];
+    [self createLogo];
     //work your magic here
     [self createTree];
     [self createFirstSketch];
@@ -35,6 +39,49 @@
     self.firstKnot = self.knots[0];
     self.firstKnot.alpha = 1.0f;
     self.firstBranch = self.branches[0];
+}
+
+-(void)revealWords {
+    C4Font *font = [C4Font fontWithName:@"Menlo-Bold" size:48];
+    C4Label *rep = [C4Label labelWithText:@"MOMENTS OF \nCHOICE" font:font];
+    rep.numberOfLines = 2;
+    rep.textAlignment = ALIGNTEXTCENTER;
+    rep.alpha = 0;
+    [rep sizeToFit];
+    rep.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.66];
+    rep.center = self.canvas.center;
+    
+    C4Label *stat = [C4Label labelWithText:@"THE CREATIVE\nPROCESS" font:font];
+    stat.numberOfLines = 2;
+    stat.textAlignment = ALIGNTEXTCENTER;
+    stat.alpha = 0;
+    stat.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.66];
+    [stat sizeToFit];
+    stat.center = self.canvas.center;
+    
+    [self runMethod:@"revealLabel:" withObject:rep afterDelay:0.25f];
+    [self runMethod:@"hideLabel:" withObject:rep afterDelay:3.25f];
+    [self runMethod:@"revealLabel:" withObject:stat afterDelay:4.5f];
+    [self runMethod:@"hideLabel:" withObject:stat afterDelay:7.5f];
+}
+
+-(void)revealLabel:(C4Label *)label {
+    [self.canvas addLabel:label];
+    label.animationDuration = 1.0f;
+    label.alpha = 1.0f;
+}
+
+-(void)hideLabel:(C4Label *)label {
+    label.animationDuration = 1.0f;
+    label.alpha = 0.0f;
+    [label runMethod:@"removeFromSuperview" afterDelay:1.1f];
+}
+
+-(void)createLogo {
+    logo = [[C4Logo alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
+    logo.origin = CGPointMake(10, self.canvas.height-logo.height-10);
+    [logo setup];
+    [self.canvas addSubview:logo];
 }
 
 -(void)touchesBegan {
@@ -121,6 +168,8 @@
             branch.animationDelay = 0.0f;
             branch.lineWidth = 2.0f;
             branch.strokeColor = [UIColor lightGrayColor];
+            
+            [self runMethod:@"revealWords" afterDelay:2.0f];
         }
     }
 }
@@ -2686,5 +2735,51 @@
     return path;
 }
 
+-(void)setupRandomLines {
+    for(int i = 0; i < 50; i++) {
+        [self addRandomLine];
+    }
+}
+
+-(void)addLine:(CGPoint)origin {
+    C4Shape *aLine;
+    CGPoint pts[2] = {origin, CGPointMake(origin.x + self.canvas.height, origin.y + self.canvas.height)};
+    aLine = [C4Shape line:pts];
+    aLine.lineWidth = 0.0;
+    switch ([C4Math randomInt:3]) {
+        case 0:
+            aLine.strokeColor = C4GREY;
+            break;
+        case 1:
+            aLine.strokeColor = C4RED;
+            break;
+        case 2:
+            aLine.strokeColor = C4BLUE;
+            break;
+    };
+    aLine.strokeEnd = 0.0f;
+    [self.canvas addShape:aLine];
+    [self animateIn:aLine];
+}
+
+-(void)animateIn:(C4Shape *)line {
+    line.animationDuration = [C4Math randomInt:5] + 5;
+    line.animationOptions = EASEOUT;
+    line.strokeEnd = 1.0f;
+    line.lineWidth = ([C4Math randomInt:20] + 5.0f) / 100.0f;
+    [self runMethod:@"animateOut:" withObject:line afterDelay:1.0];
+}
+
+-(void)animateOut:(C4Shape *)line {
+    line.animationOptions = EASEIN;
+    line.strokeStart = 1.0f;
+    [line runMethod:@"removeFromSuperview" afterDelay:line.animationDuration + 1];
+    [self runMethod:@"addRandomLine" afterDelay:line.animationDuration];
+}
+
+-(void)addRandomLine {
+    CGFloat random = [C4Math randomInt:self.canvas.width + self.canvas.height] - self.canvas.height;
+    [self addLine:CGPointMake(random, 0)];
+}
 
 @end

@@ -70,6 +70,7 @@
 		BE559EC218D7B61E0073089C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE559E2418D7B61C0073089C /* UIKit.framework */; };
 		BE559ECA18D7B61E0073089C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE559EC818D7B61E0073089C /* InfoPlist.strings */; };
 		BE559ECC18D7B61E0073089C /* EverythingCollapsesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE559ECB18D7B61E0073089C /* EverythingCollapsesTests.m */; };
+		C4C885F218EE137300AFEBFA /* C4Logo.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C885F118EE137300AFEBFA /* C4Logo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +195,8 @@
 		BE559EC718D7B61E0073089C /* EverythingCollapsesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EverythingCollapsesTests-Info.plist"; sourceTree = "<group>"; };
 		BE559EC918D7B61E0073089C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BE559ECB18D7B61E0073089C /* EverythingCollapsesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EverythingCollapsesTests.m; sourceTree = "<group>"; };
+		C4C885F018EE137300AFEBFA /* C4Logo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4Logo.h; sourceTree = "<group>"; };
+		C4C885F118EE137300AFEBFA /* C4Logo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C4Logo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +274,8 @@
 			children = (
 				BE559EB718D7B61E0073089C /* C4WorkSpace.h */,
 				BE559EB818D7B61E0073089C /* C4WorkSpace.m */,
+				C4C885F018EE137300AFEBFA /* C4Logo.h */,
+				C4C885F118EE137300AFEBFA /* C4Logo.m */,
 				BE559E2F18D7B61D0073089C /* Media */,
 				BE559E3418D7B61D0073089C /* Framework */,
 				BE559EB318D7B61E0073089C /* Storyboards */,
@@ -523,6 +528,7 @@
 				BE559EA418D7B61E0073089C /* C4Switch.m in Sources */,
 				BE559EA218D7B61E0073089C /* C4Stepper.m in Sources */,
 				BE559E9E18D7B61E0073089C /* C4ShapeLayer.m in Sources */,
+				C4C885F218EE137300AFEBFA /* C4Logo.m in Sources */,
 				BE559E7C18D7B61E0073089C /* C4EAGLESRenderer.m in Sources */,
 				BE559E7018D7B61E0073089C /* C4CameraController.m in Sources */,
 				BE559E9018D7B61E0073089C /* C4Math.m in Sources */,
