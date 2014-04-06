@@ -3,7 +3,11 @@ Resonate
 
 These are the files, code, assets, etc. I used to produce the 10 mini-apps used in my talk at Resonate Festival on April 4, 2014.
 
-They can be run in Xcode, and have been designed for iPad Air.
+To run you will need:
+
+- Xcode 5
+- iOS 7.1 sdk
+- iPad Air (because it looks badass on retina)
 
 The order of the presentation was:
 
@@ -20,8 +24,7 @@ The order of the presentation was:
 
 Additional files:
 
-*_miscTestsMedia* contains a bunch of files i was working on to hammer out the look / feel, etc.
-
-*_script* was the text I followed throughout most of the talk
+- *_miscTestsMedia*: contains a bunch of files i was working on to hammer out the look / feel, etc.
+- *_script*: was the text I followed throughout most of the talk
 
 T
