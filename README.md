@@ -7,16 +7,16 @@ They can be run in Xcode, and have been designed for iPad Air.
 
 The order of the presentation was:
 
-. Intro
-. NOSK
-. EverythingCollapses
-. Taccuino
-. TypeIs
-. Fields
-. Shift
-. Properties
-. ArtMovieView
-. Conclusion
+- Intro
+- NOSK
+- EverythingCollapses
+- Taccuino
+- TypeIs
+- Fields
+- Shift
+- Properties
+- ArtMovieView
+- Conclusion
 
 Additional files:
 
