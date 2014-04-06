@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C432ADB818F21FFB004C3342"
+               BlueprintIdentifier = "C423999218CEA7E300817070"
                BuildableName = "ArtMovieView.app"
                BlueprintName = "ArtMovieView"
                ReferencedContainer = "container:ArtMovieView.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C432AE6918F21FFE004C3342"
+               BlueprintIdentifier = "C4239A4318CEA7E600817070"
                BuildableName = "ArtMovieViewTests.xctest"
                BlueprintName = "ArtMovieViewTests"
                ReferencedContainer = "container:ArtMovieView.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C432ADB818F21FFB004C3342"
+            BlueprintIdentifier = "C423999218CEA7E300817070"
             BuildableName = "ArtMovieView.app"
             BlueprintName = "ArtMovieView"
             ReferencedContainer = "container:ArtMovieView.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C432ADB818F21FFB004C3342"
+            BlueprintIdentifier = "C423999218CEA7E300817070"
             BuildableName = "ArtMovieView.app"
             BlueprintName = "ArtMovieView"
             ReferencedContainer = "container:ArtMovieView.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C432ADB818F21FFB004C3342"
+            BlueprintIdentifier = "C423999218CEA7E300817070"
             BuildableName = "ArtMovieView.app"
             BlueprintName = "ArtMovieView"
             ReferencedContainer = "container:ArtMovieView.xcodeproj">
