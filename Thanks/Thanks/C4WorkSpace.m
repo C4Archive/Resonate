@@ -96,7 +96,7 @@
 -(void)revealHOLO {
     holoLogo.animationDuration = 0.5f;
     holoLogo.alpha = 1.0f;
-    [holoLogo runMethod:@"startAnimating" afterDelay:1.5f];
+    [holoLogo runMethod:@"startAnimating" afterDelay:0.25f];
 }
 
 -(void)hideLogos {

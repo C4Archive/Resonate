@@ -33,6 +33,7 @@
     C4Font *font = [C4Font fontWithName:@"Menlo-Regular" size:24];
     mainLabel = [C4Label labelWithText:@"PROPERTIES" font:font];
     mainLabel.numberOfLines = 20;
+    mainLabel.userInteractionEnabled = NO;
     mainLabel.frame = CGRectMake(20, 0, 640, self.canvas.height);
     [self.canvas addLabel:mainLabel];
 
@@ -41,7 +42,6 @@
 -(void)touchesBegan {
     switch (touchIndex) {
         case 0:
-            [self addMedia];
             mainLabel.text = @"[C4Shape ellipse:{0,0,100,100}];";
             s = [C4Shape ellipse:CGRectMake(0, 0, 100, 100)];
             break;

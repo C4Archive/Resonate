@@ -12,6 +12,30 @@
 		<key>type</key>
 		<string>text</string>
 		<key>string</key>
+		<string>speak + listen</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>touch + gesture</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>animation + properties</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>common logic</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
 		<string>media : objects</string>
 	</dict>
 	<dict>
@@ -24,7 +48,13 @@
 		<key>type</key>
 		<string>text</string>
 		<key>string</key>
-		<string>media:objects</string>
+		<string>app + device</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>text</string>
+		<key>string</key>
+		<string>media : objects</string>
 	</dict>
 	<dict>
 		<key>type</key>

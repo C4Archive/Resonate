@@ -770,6 +770,7 @@
 				C469B7E718EEC26F00AE3AF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C469B7E818EEC26F00AE3AF6 /* Build configuration list for PBXNativeTarget "PropertiesTests" */ = {
 			isa = XCConfigurationList;
@@ -778,6 +779,7 @@
 				C469B7EA18EEC26F00AE3AF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

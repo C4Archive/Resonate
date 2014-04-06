@@ -24,14 +24,6 @@
 	</dict>
 	<dict>
 		<key>type</key>
-		<string>text</string>
-		<key>string</key>
-		<string>draw () {
-  //...
-}</string>
-	</dict>
-	<dict>
-		<key>type</key>
 		<string>image</string>
 		<key>string</key>
 		<string>project0</string>
